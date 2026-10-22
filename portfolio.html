@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tejaswini Reddy Katipally | Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Unbounded:wght@700;800&display=swap">
+<style>
+:root{--bg:#1c1c1f;--side:#252528;--card:#232327;--line:#35353b;--ink:#c9c9d1;--muted:#8a8a96;--white:#fff;--pink:#ff6ad5;--teal:#4ec9b0;--blue:#3fb6ff;--orange:#e8a05a;--green:#6a9955;--btn:#0e6fb8;--hl:#2b2b31;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#fbfaff;--side:#f0eef8;--card:#fff;--line:#ddd8ea;--ink:#3b3950;--muted:#7a7790;--white:#1d1b2e;--pink:#d6339f;--teal:#0f8a77;--blue:#0a72b8;--orange:#b5651d;--green:#4f7d3a;--btn:#0e6fb8;--hl:#e7e3f3}}
+:root[data-theme="light"]{--bg:#fbfaff;--side:#f0eef8;--card:#fff;--line:#ddd8ea;--ink:#3b3950;--muted:#7a7790;--white:#1d1b2e;--pink:#d6339f;--teal:#0f8a77;--blue:#0a72b8;--orange:#b5651d;--green:#4f7d3a;--btn:#0e6fb8;--hl:#e7e3f3}
+html,body{height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.75 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--blue)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+.ide{height:100%;display:flex;flex-direction:column}
+.title{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--side);border-bottom:1px solid var(--line)}
+.dot{width:12px;height:12px;border-radius:50%}
+.title .cmd{margin:0 auto;padding:3px 40px;border:1px solid var(--line);border-radius:7px;color:var(--muted);font-size:.82rem;background:var(--bg)}
+.body{flex:1;min-height:0;display:flex}
+.side{width:230px;background:var(--side);border-right:1px solid var(--line);padding:14px 0;flex-shrink:0}
+.side h6{margin:0 0 10px 18px;font-size:.75rem;letter-spacing:.18em;color:var(--muted)}
+.side ul{list-style:none;margin:0;padding:0}
+.file{display:flex;align-items:center;gap:10px;width:100%;padding:6px 18px;border:0;border-left:3px solid transparent;background:none;text-align:left;color:var(--muted)}
+.file:hover{background:var(--hl)}
+.file.on{background:var(--hl);border-left-color:var(--blue);color:var(--white)}
+.ic{display:inline-block;min-width:34px;text-align:center;font-size:.62rem;font-weight:700;padding:1px 0;border-radius:4px;color:#111}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.tabs{display:flex;background:var(--side);border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{display:flex;align-items:center;gap:10px;padding:9px 16px;border:0;border-right:1px solid var(--line);background:none;color:var(--muted);white-space:nowrap}
+.tab.on{background:var(--bg);color:var(--white);box-shadow:inset 0 2px 0 var(--blue)}
+.tab .x{opacity:.6;padding:0 2px}.tab .x:hover{opacity:1;color:var(--pink)}
+.crumb{padding:7px 26px;font-size:.8rem;color:var(--muted);border-bottom:1px solid var(--line)}
+.crumb b{color:var(--ink);font-weight:500}
+.view{flex:1;overflow:auto;padding:clamp(22px,4vw,48px)}
+.pane{max-width:900px;margin:0 auto}.pane[hidden]{display:none}
+.disp{font-family:Unbounded,'JetBrains Mono',sans-serif;font-weight:800;color:var(--white);margin:0;line-height:1.08}
+h1.disp{font-size:clamp(1.5rem,5vw,3.4rem)}
+h2.disp{font-size:clamp(1.6rem,4.5vw,2.6rem)}
+.pink{color:var(--pink)}
+.rule{height:2px;width:min(100%,480px);background:linear-gradient(90deg,var(--pink),transparent);margin:16px 0}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.pill{border:1px solid var(--line);padding:5px 14px;border-radius:5px;font-size:.88rem;background:var(--card)}
+.pill::before{content:"●";margin-right:8px;color:var(--teal)}
+.pill:nth-child(2)::before{color:var(--pink)}.pill:nth-child(3)::before{color:var(--blue)}.pill:nth-child(4)::before{color:var(--orange)}
+.type{color:var(--muted);min-height:1.75em;margin:0 0 18px}
+.type i{display:inline-block;width:2px;height:1.1em;background:var(--pink);vertical-align:text-bottom;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hl{color:var(--blue);font-weight:700}
+.lead{max-width:62ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 22px;border:1px solid var(--line);background:none;border-radius:4px;color:var(--white)}
+.btn.p{background:var(--btn);border-color:var(--btn);color:#fff}
+.btn:hover{border-color:var(--pink)}
+.cm{color:var(--green);font-style:italic;margin:0 0 14px}
+.sub{color:var(--muted);margin:10px 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,30px);margin:0 0 22px}
+.label{color:var(--teal);letter-spacing:.22em;font-weight:500;margin:30px 0 14px;font-size:1.05rem}
+.card .label{margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;list-style:none;margin:0;padding:0}
+.grid2 li{padding-left:1.4em;position:relative}
+.grid2 li::before{content:"›";position:absolute;left:0;color:var(--pink)}
+.cat{letter-spacing:.2em;font-size:.78rem;font-weight:700;margin:0 0 8px}
+.proj h3{font-family:Unbounded,sans-serif;font-size:1.15rem;color:var(--white);margin:0 0 10px;font-weight:700}
+.proj p{margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);padding:2px 10px;border-radius:3px;font-size:.82rem;color:var(--muted)}
+.gh{border:1px solid var(--line);padding:5px 12px;border-radius:3px;text-decoration:none;color:var(--muted);font-size:.82rem}
+.gh:hover{color:var(--white);border-color:var(--pink)}
+.code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 0;overflow-x:auto}
+.code pre{margin:0;font:inherit;counter-reset:ln}
+.code .l{display:block;counter-increment:ln;padding-right:24px;white-space:pre;line-height:1.85}
+.code .l::before{content:counter(ln);display:inline-block;width:3em;margin-right:1.4em;padding-right:1em;text-align:right;color:var(--muted);opacity:.6;border-right:1px solid var(--line);user-select:none}
+.k{color:var(--blue)}.s{color:var(--orange)}.b{color:var(--pink)}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.certs .card{margin:0;padding:16px 18px}
+.certs b{display:block;color:var(--white);font-weight:500}
+.certs span{color:var(--muted);font-size:.85rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px 40px}
+.link{display:block;padding:14px 18px;border:1px solid var(--line);background:var(--card);border-radius:4px;text-decoration:none;color:var(--white);margin:0 0 12px}
+.link small{display:block;letter-spacing:.2em;font-weight:700;font-size:.74rem}
+.link:hover{border-color:var(--pink)}
+label{display:block;color:var(--muted);margin:12px 0 4px;font-size:.88rem}
+input,textarea{width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:10px 12px;font:inherit}
+textarea{min-height:130px;resize:vertical}
+.send{width:100%;margin-top:18px;padding:13px;border:0;border-radius:4px;background:var(--btn);color:#fff;text-align:left}
+.status{display:flex;align-items:center;gap:22px;padding:4px 14px;background:var(--btn);color:#fff;font-size:.78rem}
+.tgl{margin-left:auto;background:none;border:1px solid var(--line);border-radius:5px;padding:2px 10px;font-size:.78rem;color:var(--muted)}.tgl:hover{color:var(--white);border-color:var(--pink)}
+@media (max-width:760px){
+  .body{flex-direction:column}
+  .side{width:100%;border-right:0;border-bottom:1px solid var(--line);padding:6px 0}
+  .side h6,.tabs,.title .cmd{display:none}
+  .side ul{display:flex;overflow-x:auto}
+  .file{width:auto;white-space:nowrap;padding:8px 14px;border-left:0;border-bottom:3px solid transparent}
+  .file.on{border-bottom-color:var(--blue)}
+  .grid2,.certs,.two{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.type i{animation:none}}
+</style>
+</head>
+<body>
+<div class="ide">
+  <div class="title"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="cmd">tejaswini-reddy : portfolio</span><button id="theme" type="button" class="tgl">Light</button></div>
+  <div class="body">
+    <aside class="side"><h6>PORTFOLIO</h6><ul id="files"></ul></aside>
+    <div class="main">
+      <div class="tabs" id="tabs"></div>
+      <div class="crumb" id="crumb"></div>
+      <div class="view">
+
+<section class="pane" id="p-home">
+  <h1 class="disp">Tejaswini<br><span class="pink">Reddy Katipally</span></h1>
+  <div class="rule"></div>
+  <div class="pills"><span class="pill">Engineering Student</span><span class="pill">Full Stack · Python · Java</span><span class="pill">NLP · Computer Vision</span></div>
+  <p class="type" id="type" aria-live="off"></p>
+  <p class="lead">Every great developer starts with curiosity. I’m an engineering student exploring <span class="hl">full stack development</span> with <span class="hl">Python</span> and <span class="hl">Java</span>, building projects that don’t just work, they <span class="hl">connect</span>.</p>
+  <div class="btns"><button class="btn p" data-open="projects">Projects</button><button class="btn" data-open="about">About Me</button><button class="btn" data-open="contact">Contact</button><a class="btn" href="https://www.linkedin.com/in/tejaswini-reddy-82b3062ba" style="display:inline-block;text-decoration:none">LinkedIn ↗</a></div>
+</section>
+
+<section class="pane" id="p-about" hidden>
+  <p class="cm">&lt;!-- about.html · Tejaswini Reddy Katipally --&gt;</p>
+  <h2 class="disp">About Me</h2>
+  <p class="sub">// who I am · what I study · what I build</p>
+  <div class="card"><p style="margin:0 0 12px">Hey there! 👋 Every great developer starts with curiosity, and mine began the day I realized how a few lines of code could turn an idea into something real. That spark led me into <span class="hl">Full Stack Development</span>.</p><p style="margin:0 0 12px">Along the way I learned <span class="hl">Python</span> and <span class="hl">Java</span>, and how logic and creativity work hand in hand: one builds the foundation, the other shapes the experience.</p><p style="margin:0 0 12px">Today I’m constantly experimenting, learning and creating projects that don’t just work, they connect. For me, code isn’t just syntax, it’s <span class="hl">storytelling through technology</span>.</p><p class="cm" style="margin:0">// Always curious, always building.</p></div>
+  <div class="label">EDUCATION</div>
+  <div class="card"><b style="color:var(--white)">Sreenidhi Institute of Science &amp; Technology</b><br><span style="color:var(--muted)">2023 to 2027 · GPA 8.3 / 10</span></div>
+</section>
+
+<section class="pane" id="p-projects" hidden>
+  <h2 class="disp">Projects</h2>
+  <p class="sub">const projects = [ ...built, ...learning ]</p>
+  <article class="card proj"><p class="cat" style="color:var(--blue)">WEB APP · AI · SAFETY TECH</p><h3>SafeYatra: Journey Safety Companion</h3>
+    <p>A solo-travel safety web app in Python and Streamlit that plans driving routes on an interactive map and tracks journey progress. It adds AI road-safety tips with the Gemini API, plus trusted-contact check-ins and SOS controls, and runs on free public APIs.</p>
+    <ul class="tags"><li>Python</li><li>Streamlit</li><li>Gemini API</li></ul><a class="gh" href="https://github.com/tejaswinireddy357/safeyatra">GitHub ↗</a></article>
+  <article class="card proj"><p class="cat" style="color:var(--orange)">NLP · DATA · PROMPTS</p><h3>Prompt Quality Analyzer</h3>
+    <p>A web app that scores AI prompts from 1 to 5 and gives tips to improve them. It extracts 11 NLP features from each prompt, trains a Random Forest model, and uses Groq’s LLaMA 3 for live suggestions, with a compare mode and prompt templates.</p>
+    <ul class="tags"><li>Python</li><li>NLP</li><li>Streamlit</li></ul><a class="gh" href="https://github.com/tejaswinireddy357/prompt-iq">GitHub ↗</a> <a class="gh" style="margin-left:8px" href="https://prompt-iq-app.streamlit.app">Live ↗</a></article>
+  <article class="card proj"><p class="cat" style="color:var(--teal)">COMPUTER VISION · SUSTAINABILITY</p><h3>VisionBin: Smart Waste Management</h3>
+    <p>An AI-powered waste detection app that uses your camera to identify an item, tells you which bin it belongs in, and gives disposal tips. It uses a vision model through Groq and OpenCV, covers six waste categories, and keeps a scan history with statistics.</p>
+    <ul class="tags"><li>Python</li><li>OpenCV</li><li>Streamlit</li></ul><a class="gh" href="https://github.com/tejaswinireddy357/VisionBin">GitHub ↗</a> <a class="gh" style="margin-left:8px" href="https://visionbin-tejaswinireddy357.streamlit.app">Live ↗</a></article>
+</section>
+
+<section class="pane" id="p-skills" hidden>
+  <h2 class="disp">Skills</h2>
+  <p class="sub">// skills.json</p>
+  <div class="code"><pre><span class="l">{</span><span class="l">  <span class="k">"languages"</span>: [<span class="s">"Python"</span>, <span class="s">"Java"</span>, <span class="s">"JavaScript"</span>, <span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"MySQL"</span>],</span><span class="l">  <span class="k">"nlp_ai"</span>: [<span class="s">"NLP"</span>, <span class="s">"Data preprocessing"</span>, <span class="s">"Gemini API"</span>, <span class="s">"Groq API"</span>],</span><span class="l">  <span class="k">"computer_vision"</span>: [<span class="s">"OpenCV"</span>],</span><span class="l">  <span class="k">"data"</span>: [<span class="s">"Pandas"</span>, <span class="s">"NumPy"</span>, <span class="s">"Matplotlib"</span>, <span class="s">"Scikit-learn"</span>, <span class="s">"Power BI"</span>],</span><span class="l">  <span class="k">"web_apps"</span>: [<span class="s">"Streamlit"</span>, <span class="s">"Flask"</span>, <span class="s">"REST APIs"</span>, <span class="s">"PyDeck"</span>, <span class="s">"SQLite"</span>],</span><span class="l">  <span class="k">"tools"</span>: [<span class="s">"Git"</span>, <span class="s">"GitHub"</span>, <span class="s">"Tkinter"</span>],</span><span class="l">  <span class="k">"learning"</span>: <span class="b">true</span></span><span class="l">}</span></pre></div>
+</section>
+
+<section class="pane" id="p-certs" hidden>
+  <h2 class="disp">Certifications</h2>
+  <p class="sub"># certs.md · 8 completed</p>
+  <div class="certs">
+    <div class="card"><b>Artificial Intelligence Fundamentals</b><span>IBM</span></div>
+    <div class="card"><b>Introduction to Data Science in Python</b><span>Coursera</span></div>
+    <div class="card"><b>Programming in Java</b><span>NPTEL</span></div>
+    <div class="card"><b>Introduction to R Programming for Data Science</b><span>IBM</span></div>
+    <div class="card"><b>Operating System Basics</b><span>Cisco</span></div>
+    <div class="card"><b>Networking Basics</b><span>Cisco</span></div>
+    <div class="card"><b>Generative AI</b><span>Microsoft &amp; LinkedIn Learning</span></div>
+    <div class="card"><b>Java Fundamentals</b><span>Oracle</span></div>
+  </div>
+</section>
+
+<section class="pane" id="p-contact" hidden>
+  <div class="two">
+    <div><div class="label" style="margin-top:0">FIND ME ON</div>
+      <a class="link" href="mailto:katipallytejaswini@gmail.com"><small style="color:var(--teal)">EMAIL</small>katipallytejaswini@gmail.com</a>
+      <a class="link" href="https://www.linkedin.com/in/tejaswini-reddy-82b3062ba"><small style="color:var(--blue)">LINKEDIN</small>linkedin.com/in/tejaswini-reddy</a>
+      <a class="link" href="https://github.com/tejaswinireddy357"><small>GITHUB</small>github.com/tejaswinireddy357</a>
+    </div>
+    <form id="form"><div class="label" style="margin-top:0">SEND A MESSAGE</div>
+      <label for="fn">// your_name *</label><input id="fn" required placeholder="string">
+      <label for="fs">// subject</label><input id="fs" placeholder="string">
+      <label for="fm">// message *</label><textarea id="fm" required placeholder="'''your message'''"></textarea>
+      <button class="send" type="submit">→ send_message()</button>
+      <p class="cm" style="margin-top:12px">// opens your email app with the message ready to send</p>
+    </form>
+  </div>
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const FILES=[
+ {id:'home',name:'home.tsx',ic:'TSX',c:'#61dafb'},
+ {id:'about',name:'about.html',ic:'HTML',c:'#e44d26'},
+ {id:'projects',name:'projects.js',ic:'JS',c:'#f7df1e'},
+ {id:'skills',name:'skills.json',ic:'JSON',c:'#cbcb41'},
+ {id:'certs',name:'certs.md',ic:'MD',c:'#519aba'},
+ {id:'contact',name:'contact.css',ic:'CSS',c:'#5b8def'}
+];
+let open=['home'],active='home';
+const $=id=>document.getElementById(id);
+const badge=f=>`<span class="ic" style="background:${f.c}">${f.ic}</span>`;
+function render(){
+  $('files').innerHTML=FILES.map(f=>`<li><button class="file ${f.id===active?'on':''}" data-open="${f.id}">${badge(f)}${f.name}</button></li>`).join('');
+  $('tabs').innerHTML=open.map(id=>{const f=FILES.find(x=>x.id===id);return `<button class="tab ${id===active?'on':''}" data-open="${id}">${badge(f)}${f.name}<span class="x" data-close="${id}" role="button" aria-label="Close ${f.name}">×</span></button>`}).join('');
+  const f=FILES.find(x=>x.id===active);
+  $('crumb').innerHTML=`tejaswini-reddy › src › <b>${f.name}</b>`;
+  FILES.forEach(x=>$('p-'+x.id).hidden=x.id!==active);
+  document.querySelector('.view').scrollTop=0;
+}
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-close]');
+  if(c){e.stopPropagation();const id=c.dataset.close,i=open.indexOf(id);open=open.filter(x=>x!==id);
+    if(!open.length)open=['home'];if(active===id)active=open[Math.max(0,i-1)];render();return;}
+  const o=e.target.closest('[data-open]');
+  if(o){const id=o.dataset.open;if(!open.includes(id))open.push(id);active=id;render();}
+});
+render();
+
+const lines=['Building practical solutions_','Turning data into insight_','Always curious, always building_'];
+const t=$('type');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){t.textContent=lines[0];}
+else{let li=0,ci=0,del=false;
+  (function tick(){const s=lines[li];ci+=del?-1:1;t.innerHTML=s.slice(0,ci)+'<i></i>';
+    let d=del?35:70;if(!del&&ci===s.length){del=true;d=1400;}else if(del&&ci===0){del=false;li=(li+1)%lines.length;d=350;}
+    setTimeout(tick,d);})();}
+
+$('form').addEventListener('submit',e=>{e.preventDefault();
+  const n=$('fn').value,s=$('fs').value||'Portfolio message',m=$('fm').value;
+  location.href='mailto:katipallytejaswini@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(m+'\n\n- '+n);});
+
+const root=document.documentElement,tb=$('theme');
+const isLight=()=>root.dataset.theme?root.dataset.theme==='light':matchMedia('(prefers-color-scheme:light)').matches;
+function label(){tb.textContent=isLight()?'Dark':'Light';}
+tb.addEventListener('click',()=>{root.dataset.theme=isLight()?'dark':'light';label();});
+label();
+</script>
+</body>
+</html>
